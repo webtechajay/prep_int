@@ -69,18 +69,9 @@ Route::post('thank-you', 'razorpay\PaymentController@thank_you');
 
 
 
-// Ajax through form submission part1
-
-Route::get('jquery-ajax-form-submit', 'ajaxFormSubmit\ContactController@index');
-Route::post('jquery-ajax-form-submit', 'ajaxFormSubmit\ContactController@store');
-
-//Ajax throgh form submission part2
-
-Route::get('ajax-create', 'AjaxController@create');
-Route::post('ajaxsubmit', 'AjaxController@employeeStore');
 
 
-//Ajax form submission part3
+//Ajax form submission 
 
 Route::get('/emp-create', 'EmpController@create');
 Route::post('/emp-store', 'EmpController@store');
