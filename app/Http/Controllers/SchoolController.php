@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use Illuminate\Support\Facades\Hash;
 
 class SchoolController extends Controller
 {
@@ -27,7 +28,7 @@ class SchoolController extends Controller
         // dd($store);
     	$store = new Student();
     	$store->email = $request->email;
-    	$store->pwd = $request->pwd;
+    	$store->pwd = Hash::make($request->pwd);
     	$store->save();
         return redirect('/');
     }
@@ -44,7 +45,7 @@ class SchoolController extends Controller
 
     	$update = Student::find($id);
     	$update->email = $request->email;
-    	$update->pwd = $request->pwd;
+    	$update->pwd = Hash::make($request->pwd);
     	$update->save();
         return redirect('/');
 
