@@ -1,0 +1,1 @@
+Hey lavde samjh mai aya kya
