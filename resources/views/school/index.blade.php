@@ -83,7 +83,12 @@
 </nav>
 
 <div class="container">
-  <a href="{{url('create')}}">Create</a>
+  @if($message = Session::get('success'))
+  <div class="alert alert-success alert-block">
+    <strong>{{$message}}</strong>
+  </div>
+  @endif
+  <a href="{{url('create')}}" class="btn btn-primary">Create</a>
   <h2>Read Form</h2>
 
   <hr>

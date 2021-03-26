@@ -20,7 +20,7 @@
 
 
 Route::get('/', 'SchoolController@index');
-Route::get('/create', 'SchoolController@create')->middleware('MyMiddleware');
+Route::get('/create', 'SchoolController@create');
 Route::post('/store', 'SchoolController@store');
 Route::get('/edit/{edit}', 'SchoolController@edit');
 Route::post('/update/{update}', 'SchoolController@update');

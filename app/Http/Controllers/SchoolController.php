@@ -25,12 +25,25 @@ class SchoolController extends Controller
 
 
     public function store(Request $request){
-        // dd($store);
+        
+        $request->validate(
+            [
+                'email'=>'required|email|unique:users',
+                'pwd'=>'required|min:5'
+        ],
+        [
+            'email.required'=>'This field is required',
+            'pwd.required'=>'Password is required'
+        ]
+    );
+
+        // dd($request->all());
     	$store = new Student();
     	$store->email = $request->email;
     	$store->pwd = Hash::make($request->pwd);
     	$store->save();
-        return redirect('/');
+
+        return redirect('/')->with('success', 'Account created successfully !');
     }
 
     public function edit($id){
